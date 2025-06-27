@@ -19,6 +19,37 @@ body {
   background-size: cover;
   background-position: center;
 }
+
+/*? ----------------- type writing-------------- */
+
+#typewriter {
+  color: #ff004f;
+  /* border-right: 2px solid white; */
+  white-space: nowrap;
+  overflow: hidden;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+#typewriter::after {
+  content: "|";
+  animation: blink 2.4s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+/*? -------------------------------------------------- */
 .container {
   padding: 10px 10%;
 }
@@ -423,5 +454,18 @@ nav .fa-solid {
   }
   .copyright {
     font-size: 14px;
+  }
+
+  /*? ----------------- type writing-------------- */
+
+  #typewriter {
+    font-size: 24px;
+    display: inline-block;
+    max-width: 100%;
+    word-wrap: break-word;
+    font-family: "Courier New", Courier, monospace;
+  }
+  .header-text h1 {
+    font-size: 28px;
   }
 }

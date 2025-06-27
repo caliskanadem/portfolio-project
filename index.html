@@ -26,8 +26,11 @@
           <i class="fa-solid fa-bars" onclick="openmenu()"></i>
         </nav>
         <div class="header-text">
-          <p>Front-End Web Developer</p>
-          <h1>Hi, I'm <br /><span>Adem</span> Caliskan</h1>
+          <!-- <p>Front-End Web Developer</p> -->
+          <h1>
+            Hi, I'm <br />
+            <span id="typewriter"></span>
+          </h1>
         </div>
       </div>
     </div>
@@ -199,7 +202,7 @@
       <div class="container container2">
         <div class="contact-left">
           <h1 class="sub-title">Contact Me</h1>
-          <p><i class="fa-solid fa-paper-plane"></i> contact@example.com</p>
+          <p><i class="fa-solid fa-paper-plane"></i> ad3m.calikan@gmail.com</p>
           <p><i class="fa-solid fa-square-phone"></i> 0123456789</p>
           <div class="social-icons">
             <a href="https://www.facebook.com/caliskanadm"
@@ -263,6 +266,51 @@
       function closemenu() {
         sidemenu.style.right = "-200px";
       }
+    </script>
+
+    <!-- ------------- type writing------------------ -->
+    <script>
+      const texts = [
+        "Adem Caliskan",
+        "a Front-End Developer",
+        "a Problem Solver",
+        "a Lifelong Learner",
+      ];
+
+      let currentTextIndex = 0;
+      let currentCharIndex = 0;
+      let isDeleting = false;
+      const speed = 100;
+      const deleteSpeed = 50;
+      const delayAfterTyping = 1500;
+
+      function typeWriter() {
+        const el = document.getElementById("typewriter");
+        const currentText = texts[currentTextIndex];
+
+        if (isDeleting) {
+          currentCharIndex--;
+          el.textContent = currentText.substring(0, currentCharIndex);
+          if (currentCharIndex === 0) {
+            isDeleting = false;
+            currentTextIndex = (currentTextIndex + 1) % texts.length;
+            setTimeout(typeWriter, speed);
+            return;
+          }
+          setTimeout(typeWriter, deleteSpeed);
+        } else {
+          currentCharIndex++;
+          el.textContent = currentText.substring(0, currentCharIndex);
+          if (currentCharIndex === currentText.length) {
+            isDeleting = true;
+            setTimeout(typeWriter, delayAfterTyping);
+            return;
+          }
+          setTimeout(typeWriter, speed);
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", typeWriter);
     </script>
   </body>
 </html>
