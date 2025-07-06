@@ -469,3 +469,92 @@ nav .fa-solid {
     font-size: 28px;
   }
 }
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  #header {
+    background-image: url(images/tablet-background.png); /* ya da orijinal resmin yolu */
+    background-position: top center; /* kafanın görünmesini sağlar */
+    background-size: contain; /* resmi tam gösterir */
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+
+  #header img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: top center;
+  }
+
+  .header-text {
+    margin-top: 60%;
+    font-size: 18px;
+  }
+  .header-text h1 {
+    font-size: 36px;
+  }
+  nav .fa-solid {
+    display: block;
+    font-size: 28px;
+  }
+  nav ul {
+    background: #ff004f;
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 110vh;
+    padding-top: 60px;
+    z-index: 2;
+    transition: right 0.5s;
+  }
+  nav ul li {
+    display: block;
+    margin: 30px;
+  }
+  nav ul .fa-solid {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    cursor: pointer;
+  }
+  .logo {
+    width: 280px;
+    height: auto;
+  }
+  .sub-title {
+    font-size: 48px;
+  }
+
+  .about-col-1,
+  .about-col-2 {
+    flex-basis: 100%;
+  }
+  .about-col-1 {
+    margin-bottom: 40px;
+  }
+  .about-col-2 {
+    font-size: 16px;
+  }
+  .tab-links {
+    font-size: 18px;
+    margin-right: 25px;
+  }
+  .contact-left,
+  .contact-right {
+    flex-basis: 100%;
+  }
+  .copyright {
+    font-size: 15px;
+  }
+
+  /*? ----------------- type writing-------------- */
+
+  #typewriter {
+    font-size: 28px;
+    display: inline-block;
+    max-width: 100%;
+    word-wrap: break-word;
+    font-family: "Courier New", Courier, monospace;
+  }
+}
